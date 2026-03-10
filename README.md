@@ -49,16 +49,16 @@ g++ "241054_Sumath.cpp" -o analyzer
 Returns how many times a word appears in a given file version.
 
 ```bash
-./analyzer --file dataset_v1.txt --version v1 --buffer 512 --query word --word error
+./analyzer --file test_logs.txt --version v1 --buffer 256 --query word --word error
 ```
 
 **Output:**
 ```
 Version: v1
 Word: error
-Count: 142
-Allocated buffer size: 512 KB
-Total execution time: 0.38 seconds
+Count: 605079
+Allocated buffer size (KB): 256
+Total execution time: 2.18918 seconds
 ```
 
 ---
@@ -67,18 +67,25 @@ Total execution time: 0.38 seconds
 Returns the K most frequent words in a file version, sorted by descending frequency.
 
 ```bash
-./analyzer --file dataset_v1.txt --version v1 --buffer 512 --query top --top 10
+./analyzer --file test_logs.txt --version v1 --buffer 256 --query top --top 10
 ```
 
 **Output:**
 ```
 Version: v1
 Top 10 words:
-the -> 9821
-error -> 142
-...
-Allocated buffer size: 512 KB
-Total execution time: 0.41 seconds
+devops -> 1209558
+debug -> 605150
+error -> 605079
+info -> 604266
+warning -> 604149
+orderservice -> 484437
+paymentservice -> 484078
+authservice -> 483842
+searchservice -> 483162
+userservice -> 483125
+Allocated buffer size: 256 KB
+Total execution time: 2.15474 seconds
 ```
 
 ---
@@ -87,7 +94,7 @@ Total execution time: 0.41 seconds
 Returns the difference in frequency of a word between two file versions (`version1 count - version2 count`).
 
 ```bash
-./analyzer --file1 dataset_v1.txt --version1 v1 --file2 dataset_v2.txt --version2 v2 --buffer 512 --query diff --word error
+./analyzer --file1 test_logs.txt --version1 v1 --file2 verbose_logs.txt --version2 v2 --buffer 256 --query diff --word error
 ```
 
 **Output:**
@@ -95,9 +102,9 @@ Returns the difference in frequency of a word between two file versions (`versio
 Version 1: v1
 Version 2: v2
 Word: error
-Difference (v1 - v2): 37
-Allocated buffer size: 512 KB
-Total execution time: 0.74 seconds
+Difference (v1 - v2): 495377
+Allocated buffer size: 256 KB
+Total execution time: 4.80576 seconds
 ```
 
 ---
