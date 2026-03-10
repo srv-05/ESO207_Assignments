@@ -15,7 +15,7 @@ A command-line C++ tool that builds a word-frequency index over large text files
 ## Compilation
 
 ```bash
-g++ -std=c++17 -O2 -o analyzer main_optimized_v2.cpp
+g++ "241054_Sumath.cpp" -o analyzer
 ```
 
 ---
